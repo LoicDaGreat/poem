@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101510" />
+  <meta name="description" content="A quiet poem about finding light in the ordinary." />
+  <title>Where the Light Finds Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f2eedf;
+      --muted: #a9ad9e;
+      --gold: #d7bc83;
+      --line: rgba(235, 225, 195, .17);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      padding: 48px 24px;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 50% 44%, rgba(116, 121, 76, .2), transparent 48%),
+        radial-gradient(ellipse at 12% 90%, rgba(112, 84, 48, .13), transparent 38%),
+        #101510;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      opacity: .14;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+
+    .page { width: min(100%, 760px); animation: arrive 1.2s ease both; }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 34px;
+      color: var(--gold);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    .topline::before, .topline::after {
+      width: 34px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+      content: "";
+    }
+    .topline::after { transform: rotate(180deg); }
+
+    .poem-card {
+      position: relative;
+      padding: clamp(36px, 8vw, 76px) clamp(26px, 9vw, 88px) 48px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.008) 45%, rgba(213,188,131,.025));
+      box-shadow: 0 30px 100px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.035);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .poem-card::before, .poem-card::after {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      border-color: rgba(215,188,131,.6);
+      content: "";
+    }
+    .poem-card::before { top: 12px; left: 12px; border-top: 1px solid; border-left: 1px solid; }
+    .poem-card::after { right: 12px; bottom: 12px; border-right: 1px solid; border-bottom: 1px solid; }
+
+    h1 {
+      margin: 0 0 12px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.35rem, 7vw, 4.1rem);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.08;
+    }
+
+    .subtitle {
+      margin: 0 0 38px;
+      color: var(--muted);
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .ornament { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 34px; color: var(--gold); }
+    .ornament span { width: 44px; height: 1px; background: var(--line); }
+    .ornament b { font-size: .8rem; font-weight: 400; }
+
+    .poem {
+      color: #e6e2d5;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.12rem, 2.8vw, 1.38rem);
+      line-height: 1.9;
+    }
+    .stanza { margin: 0 0 25px; }
+    .stanza:last-child { margin-bottom: 0; }
+    .poem em { color: #e3c991; font-weight: 500; }
+
+    footer { margin-top: 32px; color: #777e70; font-size: .7rem; letter-spacing: .12em; text-align: center; text-transform: uppercase; }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline">A moment in verse</div>
+    <article class="poem-card" aria-labelledby="poem-title">
+      <h1 id="poem-title">Where the Light<br />Finds Us</h1>
+      <p class="subtitle">A little poem for the in-between</p>
+      <div class="ornament" aria-hidden="true"><span></span><b>✳</b><span></span></div>
+      <div class="poem">
+        <p class="stanza">The evening lays its <em>amber</em> hands<br />upon the roofs, the restless land;<br />the day unthreads its golden seam<br />and slips away into a dream.</p>
+        <p class="stanza">Still, in the hush, a window glows—<br />a small, warm yes the dark bestows.<br />And all at once, the world feels kind:<br />there is a light that waits to find us.</p>
+      </div>
+    </article>
+    <footer>Take what you need from these words</footer>
+  </main>
+</body>
+</html>
